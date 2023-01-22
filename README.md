@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# demo look
+![logo](https://github.com/Trilasha/NewsWallah-React/blob/master/demo_look.png?raw=true)
+
+
+![logo](https://github.com/Trilasha/NewsWallah-React/blob/master/demo_look2.png?raw=true)
+
 ## Available Scripts
 
 In the project directory, you can run:
