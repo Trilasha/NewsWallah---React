@@ -15,9 +15,10 @@ export class News extends Component {
 
 
     static defaultProps = {
-       country: 'in',
+       country: 'us',
        pageSize: 8,
-       category:'general'
+       category:'general',
+       apiKey: process.env.REACT_APP_NEWS_API
     }
 
     static propTypes = {
@@ -42,11 +43,11 @@ export class News extends Component {
         console.log("Yeah this is another version of mine:)");
         
         this.state = {
-          
-            articles:[],
+            articles: [],
             loading: false,
             page:1,
             totalResults: 0
+
         }
 
       
