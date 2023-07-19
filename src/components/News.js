@@ -122,6 +122,7 @@ export class News extends Component {
                         hasMore={this.state.articles.length !== this.state.totalResults}
                         loader={<Spinner/>}>
 
+                        <div>{this.props.apiKey}</div>
 
 
                     
