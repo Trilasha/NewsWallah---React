@@ -4,6 +4,7 @@ import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 
 import InfiniteScroll from "react-infinite-scroll-component";
+import shortid from 'shortid';
 
 
 
@@ -109,27 +110,37 @@ export class News extends Component {
                 <h1 className="text-center" style={{margin:'35px 0px'}}>NewsWallah - Top {this.capitalizeFirstLetter(this.props.category)} Headlines</h1>
                 {this.state.loading && <Spinner/>}
 
-                <InfiniteScroll
-                dataLength={this.state.articles.length}
-                next={this.fetchMoreData}
-                hasMore={this.state.articles.length !== this.state.totalResults}
-                loader={<Spinner/>}>
+
+                {
+
+                    this.state.articles.length?
+                    
+                        <InfiniteScroll
+                        dataLength={this.state.articles.length}
+                        next={this.fetchMoreData}
+                        hasMore={this.state.articles.length !== this.state.totalResults}
+                        loader={<Spinner/>}>
 
 
 
-               
-                <div className="container">
-                <div className="row">
+                    
+                        <div className="container">
+                        <div className="row">
 
-                {this.state.articles.map((element)=>{
-                    return <div className="col-md-4" key={element.url}>
-                    <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsurl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
-                    </div>
-                })}    
-                </div>
-                </div>
-                </InfiniteScroll>
+                        {this.state.articles.map((element)=>{
+                            return <div className="col-md-4" key={shortid.generate()}>
+                            <NewsItem title={element.title} description={element.description} imageUrl={element.urlToImage} newsurl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
+                            </div>
+                        })}    
+                        </div>
+                        </div>
+                        </InfiniteScroll>
+                        :
+                        <div>
+                            Nothing to show
+                        </div>
 
+                }
              </>
         )
     }
