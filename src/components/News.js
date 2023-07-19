@@ -114,7 +114,7 @@ export class News extends Component {
 
                 {
 
-                    this.state.articles.length?
+                    this.state.articles ?
                     
                         <InfiniteScroll
                         dataLength={this.state.articles.length}
